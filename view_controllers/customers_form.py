@@ -98,6 +98,7 @@ class CostumerForm(Gtk.Box):
         Fills every field with the data on the database for the given
         user id.
         """
+        self.model.clear()
         costumer = Costumer(self.search_entry.get_text()) # New costumer object with the user id on search_entry
         costumer_list = costumer.get_costumer() # Gets the database data
         self.name_entry.set_text(costumer_list[0][1])
@@ -106,9 +107,10 @@ class CostumerForm(Gtk.Box):
         self.zip_entry.set_text(str(costumer_list[0][4]))
         self.tlf_entry.set_text(str(costumer_list[0][5]))
         purchase = Purchase(self.search_entry.get_text()) # New purchase object with the user id on search_entry
-        purchases = purchase.get_purchase_by_dni() # Gets the database data
-        p = (purchases[0], purchases[1], str(purchases[2])) # A list with (str, int, str)
-        self.model.append(p) # Appends the list to the Gtk.ListStore model
+        if purchase.check_purchase():
+            purchases = purchase.get_purchase_by_dni() # Gets the database data
+            p = (purchases[0], purchases[1], str(purchases[2])) # A list with (str, int, str)
+            self.model.append(p) # Appends the list to the Gtk.ListStore model
 
 
     def on_new_client_clicked(self, button):

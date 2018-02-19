@@ -96,7 +96,8 @@ class NewCostumer(Gtk.Window):
         self.button_box.pack_start(self.validate_button, False, False, 0)
 
         self.show_all()
-        self.connect("delete_event", Gtk.main_quit)
+        self.set_position(Gtk.WindowPosition.CENTER_ALWAYS) # Shows the current window centered on the screen.
+        self.connect("delete_event", self.destroy)
 
     def on_validate_button_clicked(self, button):
         """ Validate button event

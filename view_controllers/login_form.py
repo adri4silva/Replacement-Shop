@@ -69,6 +69,7 @@ class LoginForm(Gtk.Window):
         username = self.user_entry.get_text()
         password = self.pwd_entry.get_text()
         validate_user = User(username, password, "a")
+        validate_user.get_user()
         if validate_user.check_user(): # True
             self.destroy() # Destroy the current window
             from view_controllers.notebook import Notebook

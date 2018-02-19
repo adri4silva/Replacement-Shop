@@ -22,5 +22,6 @@ class Notebook(Gtk.Window):
         self.notebook_layout.append_page(self.products, Gtk.Label("Productos"))
 
         self.connect("delete-event", Gtk.main_quit)
+        self.set_position(Gtk.WindowPosition.CENTER_ALWAYS) # Shows the current window centered on the screen.
         self.show_all()
 
