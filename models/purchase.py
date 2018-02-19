@@ -1,6 +1,6 @@
-from models.data_base import Data_Base
+from models.database import DataBase
 
-class Purchase(Data_Base):
+class Purchase(DataBase):
     """ Purchase model.
 
     This class contains all the necessary methods to access the

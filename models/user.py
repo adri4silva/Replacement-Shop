@@ -1,8 +1,8 @@
 import bcrypt
-from models.data_base import Data_Base
+from models.database import DataBase
 
 
-class User(Data_Base):
+class User(DataBase):
     """ User model.
 
     This class contains all the necessary methods to access the

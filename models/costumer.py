@@ -1,6 +1,6 @@
-from models.data_base import Data_Base
+from models.database import DataBase
 
-class Costumer(Data_Base):
+class Costumer(DataBase):
     """ Costumer model.
 
     This class contains all the necessary methods to access the
@@ -39,7 +39,7 @@ class Costumer(Data_Base):
         """
         try:
             cursor = self.db.cursor()
-            cursor.execute("SELECT * FROM costumers WHERE dni=?", (self.dni,))
+            cursor.execute("SELECT * FROM costumers WHERE dni=%s", (self.dni,))
             return cursor.fetchall()
         except:
             print("Error")

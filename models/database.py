@@ -1,7 +1,7 @@
 import MySQLdb as data_base
 import sqlite3 as db
 
-class Data_Base(object):
+class DataBase(object):
     """ Database class.
     Connects to the mariaDB database with the credentials.
     """

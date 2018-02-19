@@ -1,6 +1,6 @@
-from models.data_base import Data_Base
+from models.database import DataBase
 
-class Product(Data_Base):
+class Product(DataBase):
     """ Product model.
 
     This class contains all the necessary methods to access the
