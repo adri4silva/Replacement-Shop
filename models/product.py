@@ -19,7 +19,7 @@ class Product(Data_Base):
         """ Inserts a product to the table."""
         cursor = self.db.cursor()
         cursor.execute(
-            "INSERT INTO products (productid, productname, productype, productstock, productprice, productdescription) VALUES (%s, %s, %s, %s, %s, %s)",
+            "INSERT INTO products (productid, productname, productype, productstock, productprice, productdescription) VALUES (?, ?, ?, ?, ?, ?)",
             (self.id, self.name, self.type, self.stock, self.price, self.description))
         self.db.commit()
 
@@ -30,7 +30,7 @@ class Product(Data_Base):
         """
         cursor = self.db.cursor()
         cursor.execute(
-            "SELECT productid, productname, productype, productstock, productprice, productdescription FROM products WHERE productid=%s",
+            "SELECT productid, productname, productype, productstock, productprice, productdescription FROM products WHERE productid=?",
             (self.id,))
         return (cursor.fetchone())
 
@@ -41,7 +41,7 @@ class Product(Data_Base):
         """
         cursor = self.db.cursor()
         cursor.execute(
-            "SELECT productname, productype, productstock, productprice, productdescription FROM products WHERE productname=%s",
+            "SELECT productname, productype, productstock, productprice, productdescription FROM products WHERE productname=?",
             (self.name,))
         return (cursor.fetchone())
 

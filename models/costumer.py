@@ -22,14 +22,15 @@ class Costumer(Data_Base):
         :return: True if the insert was succesful. False otherwise.
         """
         if self.check_user():
+            return False
+        else:
             cursor = self.db.cursor()
             cursor.execute(
-                "INSERT INTO costumers (dni, costumername, costumerlastname, costumeraddress, costumerpostcode, costumertlfnumber, costumerbirth) VALUES (%s, %s, %s, %s, %s, %s, %s)",
+                "INSERT INTO costumers (dni, costumername, costumerlastname, costumeraddress, costumerpostcode, costumertlfnumber, costumerbirth) VALUES (?, ?, ?, ?, ?, ?, ?)",
                 (self.dni, self.name, self.last_name, self.address, self.postal_code, self.t_number, self.date_birth))
             self.db.commit()
             return True
-        else:
-            return False
+
 
     def get_costumer(self):
         """ Return a the costumer row that matches a DNI.
@@ -38,7 +39,7 @@ class Costumer(Data_Base):
         """
         try:
             cursor = self.db.cursor()
-            cursor.execute("SELECT * FROM costumers WHERE dni=%s", (self.dni,))
+            cursor.execute("SELECT * FROM costumers WHERE dni=?", (self.dni,))
             return cursor.fetchall()
         except:
             print("Error")
