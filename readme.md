@@ -12,6 +12,7 @@ La interfaz se debe ejecutar desde `view_controllers/login_form.py`
 ## Descripción de la base de datos
 
 Los usuarios tienen la **contraseña cifrada**
+
 Para acceder, crea un **nuevo usuario** con contraseña
 
 
