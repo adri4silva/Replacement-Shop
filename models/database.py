@@ -1,4 +1,3 @@
-import MySQLdb as data_base
 import sqlite3 as db
 
 class DataBase(object):
