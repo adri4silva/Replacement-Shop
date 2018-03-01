@@ -20,11 +20,11 @@ class Purchase(DataBase):
         cursor = self.db.cursor()
         cursor.execute(
             "SELECT * FROM purchases WHERE dni=?", (self.dni,))
-        return (cursor.fetchone())
+        return (cursor.fetchall())
 
     def check_purchase(self):
         try:
-            if self.get_purchase_by_dni()[0] == self.dni:
+            if self.get_purchase_by_dni()[0][0] == self.dni:
                 return True
             else:
                 return False
