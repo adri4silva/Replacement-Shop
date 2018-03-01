@@ -81,7 +81,6 @@ class RegisterForm(Gtk.Window):
         """
         username = self.user_entry.get_text()
         pwd = self.pwd_entry.get_text()
-        print(self.user_type)
         new_user = User(username, pwd, self.user_type)
         if new_user.insert_user() == True:
             self.destroy()
