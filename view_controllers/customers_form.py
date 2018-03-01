@@ -57,7 +57,8 @@ class CostumerForm(Gtk.Box):
         # search area
         self.search_box = Gtk.Box()
         self.pack_start(self.search_box, False, False, 0)
-        self.search_label = Gtk.Label("BUSQUEDA DNI")
+        self.search_label = Gtk.Label()
+        self.search_label.set_markup("<b>BUSQUEDA DNI</b>")
         self.search_entry = Gtk.Entry()
         self.search_box.pack_end(self.search_entry, False, False, 0)
         self.search_box.pack_end(self.search_label, False, False, 20)
@@ -73,13 +74,15 @@ class CostumerForm(Gtk.Box):
         # first row
         self.first_row_box = Gtk.Box()
         self.data_box.pack_start(self.first_row_box, False, False, 0)
-        self.name_label = Gtk.Label("Nombre")
+        self.name_label = Gtk.Label()
+        self.name_label.set_markup("<b>Nombre</b>")
         self.name_label.set_margin_left(10)
         self.first_row_box.pack_start(self.name_label, False, False, 10)
         self.name_entry = Gtk.Entry()
         self.name_entry.set_margin_left(6)
         self.first_row_box.pack_start(self.name_entry, False, False, 0)
-        self.last_name_label = Gtk.Label("Apellido")
+        self.last_name_label = Gtk.Label()
+        self.last_name_label.set_markup("<b>Apellido</b>")
         self.last_name_label.set_margin_left(10)
         self.first_row_box.pack_start(self.last_name_label, False, False, 10)
         self.last_name_entry = Gtk.Entry()
@@ -89,7 +92,8 @@ class CostumerForm(Gtk.Box):
         # second row
         self.second_row_box = Gtk.Box()
         self.data_box.pack_start(self.second_row_box, False, False, 0)
-        self.address_label = Gtk.Label("Domicilio")
+        self.address_label = Gtk.Label()
+        self.address_label.set_markup("<b>Domicilio</b>")
         self.address_label.set_margin_left(10)
         self.second_row_box.pack_start(self.address_label, False, False, 10)
         self.address_entry = Gtk.Entry()
@@ -99,13 +103,15 @@ class CostumerForm(Gtk.Box):
         # third row
         self.third_row_box = Gtk.Box()
         self.data_box.pack_start(self.third_row_box, False, False, 0)
-        self.zip_label = Gtk.Label("C.P.")
+        self.zip_label = Gtk.Label()
+        self.zip_label.set_markup("<b>C.P.</b>")
         self.zip_label.set_margin_left(10)
         self.third_row_box.pack_start(self.zip_label, False, False, 10)
         self.zip_entry = Gtk.Entry()
         self.zip_entry.set_margin_left(25)
         self.third_row_box.pack_start(self.zip_entry, False, False, 0)
-        self.tlf_label = Gtk.Label("TLF")
+        self.tlf_label = Gtk.Label()
+        self.tlf_label.set_markup("<b>TLF</b>")
         self.tlf_label.set_margin_left(10)
         self.third_row_box.pack_start(self.tlf_label, False, False, 10)
         self.tlf_entry = Gtk.Entry()
@@ -114,7 +120,8 @@ class CostumerForm(Gtk.Box):
 
     def forth_row_area(self):
         # forth row
-        self.label = Gtk.Label("HISTORIAL COMPRA")
+        self.label = Gtk.Label()
+        self.label.set_markup("<b>HISTORIAL COMPRA</b>")
         self.label.set_margin_left(10)
         self.data_box.pack_start(self.label, False, False, 10)
 

@@ -49,7 +49,8 @@ class NewCostumer(Gtk.Window):
         # name area
         self.name_box = Gtk.Box(spacing=36)
         self.external_box.pack_start(self.name_box, False, False, 0)
-        self.name_label = Gtk.Label("Nombre")
+        self.name_label = Gtk.Label()
+        self.name_label.set_markup("<b>Nombre</b>")
         self.name_label.set_margin_left(10)
         self.name_box.pack_start(self.name_label, False, False, 0)
         self.name_entry = Gtk.Entry()
@@ -60,7 +61,8 @@ class NewCostumer(Gtk.Window):
         # last name area
         self.last_name_box = Gtk.Box(spacing=36)
         self.external_box.pack_start(self.last_name_box, False, False, 0)
-        self.last_name_label = Gtk.Label("Apellido")
+        self.last_name_label = Gtk.Label()
+        self.last_name_label.set_markup("<b>Apellido</b>")
         self.last_name_label.set_margin_left(10)
         self.last_name_box.pack_start(self.last_name_label, False, False, 0)
         self.last_name_entry = Gtk.Entry()
@@ -71,7 +73,8 @@ class NewCostumer(Gtk.Window):
         # id area
         self.id_box = Gtk.Box(spacing=36)
         self.external_box.pack_start(self.id_box, False, False, 0)
-        self.id_label = Gtk.Label("DNI")
+        self.id_label = Gtk.Label()
+        self.id_label.set_markup("<b>DNI</b>")
         self.id_label.set_margin_left(10)
         self.id_box.pack_start(self.id_label, False, False, 0)
         self.id_entry = Gtk.Entry()
@@ -84,7 +87,8 @@ class NewCostumer(Gtk.Window):
         # address area
         self.address_box = Gtk.Box()
         self.external_box.pack_start(self.address_box, False, False, 0)
-        self.address_label = Gtk.Label("Domicilio")
+        self.address_label = Gtk.Label()
+        self.address_label.set_markup("<b>Domicilio</b>")
         self.address_label.set_margin_left(10)
         self.address_box.pack_start(self.address_label, False, False, 0)
         self.address_entry = Gtk.Entry()
@@ -95,7 +99,8 @@ class NewCostumer(Gtk.Window):
         # zip code area
         self.zip_box = Gtk.Box()
         self.external_box.pack_start(self.zip_box, False, False, 0)
-        self.zip_label = Gtk.Label("C.P.")
+        self.zip_label = Gtk.Label()
+        self.zip_label.set_markup("<b>C.P.</b>")
         self.zip_label.set_margin_left(10)
         self.zip_box.pack_start(self.zip_label, False, False, 0)
         self.zip_entry = Gtk.Entry()
@@ -106,7 +111,8 @@ class NewCostumer(Gtk.Window):
         # tlf area
         self.tlf_box = Gtk.Box()
         self.external_box.pack_start(self.tlf_box, False, False, 0)
-        self.tlf_label = Gtk.Label("TLF")
+        self.tlf_label = Gtk.Label()
+        self.tlf_label.set_markup("<b>TLF</b>")
         self.tlf_label.set_margin_left(10)
         self.tlf_box.pack_start(self.tlf_label, False, False, 0)
         self.tlf_entry = Gtk.Entry()
@@ -117,7 +123,8 @@ class NewCostumer(Gtk.Window):
         # birth date area
         self.birth_box = Gtk.Box()
         self.external_box.pack_start(self.birth_box, False, False, 0)
-        self.birth_label = Gtk.Label("Fecha de Nacimiento")
+        self.birth_label = Gtk.Label()
+        self.birth_label.set_markup("<b>Fecha de Nacimiento</b>")
         self.birth_label.set_margin_left(10)
         self.birth_box.pack_start(self.birth_label, False, False, 4)
         self.birth_entry = Gtk.Entry()
