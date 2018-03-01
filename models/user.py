@@ -37,7 +37,8 @@ class User(DataBase):
         :return: True if the user is inserted. False otherwise.
         """
         cursor = self.db.cursor()
-        if self.get_user() == ():
+
+        if self.get_user() == []:
             cursor.execute("INSERT INTO users (username, password, usertype) VALUES (?, ?, ?)",
                            (self.username, self.password_encryption(self.password), self.user_type))
             self.db.commit()
@@ -55,7 +56,7 @@ class User(DataBase):
             cursor.execute("SELECT username FROM users WHERE username=?", (self.username,))
             return cursor.fetchall()
         except:
-            print("Error")
+            print("Error obteniendo usuario")
 
     def check_user(self):
         """ Checks if the credentials are correct.

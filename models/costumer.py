@@ -39,7 +39,7 @@ class Costumer(DataBase):
         """
         try:
             cursor = self.db.cursor()
-            cursor.execute("SELECT * FROM costumers WHERE dni=%s", (self.dni,))
+            cursor.execute("SELECT * FROM costumers WHERE dni=?", (self.dni,))
             return cursor.fetchall()
         except:
             print("Error")
