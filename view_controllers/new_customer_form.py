@@ -2,10 +2,10 @@ import gi
 
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
-from models.costumer import Costumer
+from models.customer import Customer
 
 
-class NewCostumer(Gtk.Window):
+class NewCustomer(Gtk.Window):
     """ Customer form window using Gtk library.
 
     A form that creates a new costumer in the database.
@@ -39,8 +39,8 @@ class NewCostumer(Gtk.Window):
         address = self.address_entry.get_text()
         postal_code = self.zip_entry.get_text()
         t_number = self.tlf_entry.get_text()
-        costumer = Costumer(dni, name, last_name, address, postal_code, t_number)
-        if costumer.insert_costumer(): # True
+        costumer = Customer(dni, name, last_name, address, postal_code, t_number)
+        if costumer.insert_customer(): # True
             self.destroy()
         else: # False
             '''Ya existe el usuario'''
