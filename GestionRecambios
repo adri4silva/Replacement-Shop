@@ -1,0 +1,7 @@
+#!/usr/local/bin
+import gi
+from gi.repository import Gtk
+from view_controllers.login_form import LoginForm
+
+LoginForm()
+Gtk.main()
