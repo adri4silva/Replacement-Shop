@@ -153,6 +153,6 @@ class CustomerForm(Gtk.Window):
 
 
         #creacion del archivo pdf
-        doc = SimpleDocTemplate("{name}.pdf".format(name=costumer.name), pagesize=A4, showBoundary=1)
+        doc = SimpleDocTemplate("cliente.pdf", pagesize=A4, showBoundary=1)
         doc.build(script)
 
