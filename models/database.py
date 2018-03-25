@@ -5,4 +5,4 @@ class DataBase(object):
     Connects to the sqlite database with the credentials.
     """
     def __init__(self):
-        self.db = db.Connection("/Users/adri/Proyectos/PycharmProjects/RecambiosCoche/recambios.sqlite")
+        self.db = db.Connection("../recambios.sqlite")
