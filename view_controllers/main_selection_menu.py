@@ -60,8 +60,8 @@ class SelectionMenu(Gtk.Window):
         self.show_all()
 
     def on_customer_form_clicked(self, button):
-        from view_controllers.customers_form import CostumerForm
-        CostumerForm()
+        from view_controllers.customers_form import CustomerForm
+        CustomerForm()
 
     def on_product_form_clicked(self, button):
         from view_controllers.products_form import ProductForm
