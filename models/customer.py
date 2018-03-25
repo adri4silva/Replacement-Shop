@@ -1,10 +1,10 @@
 from models.database import DataBase
 
-class Costumer(DataBase):
-    """ Costumer model.
+class Customer(DataBase):
+    """ Customer model.
 
     This class contains all the necessary methods to access the
-    'costumers' table in the database.
+    'customers' table in the database.
     """
     def __init__(self, dni, name=None, last_name=None, address=None, postal_code=None, t_number=None, date_birth=None):
         super().__init__()
@@ -16,8 +16,8 @@ class Costumer(DataBase):
         self.t_number = t_number
         self.date_birth = date_birth
 
-    def insert_costumer(self):
-        """ Inserts a costumer into the database.
+    def insert_customer(self):
+        """ Inserts a customer into the database.
 
         :return: True if the insert was succesful. False otherwise.
         """
@@ -32,8 +32,8 @@ class Costumer(DataBase):
             return True
 
 
-    def get_costumer(self):
-        """ Return a the costumer row that matches a DNI.
+    def get_customer(self):
+        """ Return the customer row that matches a DNI.
 
         :return: The costumer row.
         """
@@ -50,7 +50,7 @@ class Costumer(DataBase):
         :return: True if correct. False otherwise.
         """
         try:
-            if self.get_costumer()[0][0] == self.dni:
+            if self.get_customer()[0][0] == self.dni:
                 return True
             else:
                 return False

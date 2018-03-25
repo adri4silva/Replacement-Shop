@@ -19,7 +19,7 @@ class NewCostumer(Gtk.Window):
         self.name_area()
         self.last_name_area()
         self.id_area()
-        self.addres_area()
+        self.address_area()
         self.zip_code_area()
         self.tlf_area()
         self.birth_date_area()
