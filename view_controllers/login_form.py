@@ -5,6 +5,8 @@ from gi.repository import Gtk
 from models.user import User
 
 
+
+
 class LoginForm(Gtk.Window):
     """Logim form window using Gtk library.
 
@@ -40,8 +42,8 @@ class LoginForm(Gtk.Window):
 
         if validate_user.check_user():
             self.destroy()
-            from view_controllers.notebook import Notebook
-            Notebook()
+            from view_controllers.main_selection_menu import SelectionMenu
+            SelectionMenu(username=username)
         else:
             self.validation_label.set_markup("<span color='red'>No existe el usuario</span>")
 
