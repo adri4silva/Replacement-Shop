@@ -45,3 +45,13 @@ class Product(DataBase):
             (self.name,))
         return (cursor.fetchone())
 
+    def get_products(self):
+        """ Gets all the products of the database
+
+        :return: The product row.
+        """
+        cursor = self.db.cursor()
+        cursor.execute(
+            "SELECT * FROM products")
+        return (cursor.fetchall())
+
